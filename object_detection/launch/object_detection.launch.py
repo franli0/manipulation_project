@@ -11,20 +11,23 @@ def generate_launch_description():
     
     return LaunchDescription([
         
+        # Static transform publisher
         Node(
             package='object_detection',
-            executable='static_transform_publisher_cpp',
+            executable='static_transform_publisher.py',
             name='static_transform_publisher',
             output='screen'
         ),
         
+        # Object detection node  
         Node(
             package='object_detection',
-            executable='object_detection_cpp',
+            executable='object_detection.py',
             name='object_detection_node',
             output='screen'
         ),
         
+        # RViz2 node
         Node(
             package='rviz2',
             executable='rviz2',
