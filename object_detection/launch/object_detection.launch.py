@@ -11,7 +11,7 @@ def generate_launch_description():
     
     return LaunchDescription([
         
-        # Static transform publisher
+        # Static transform publisher node
         Node(
             package='object_detection',
             executable='static_transform_publisher.py',
