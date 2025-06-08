@@ -334,6 +334,10 @@ private:
     // Get and store the current joint positions as starting position
     current_state_robot_ = move_group_robot_->getCurrentState(10);
     current_state_robot_->copyJointGroupPositions(joint_model_group_robot_, starting_joint_positions_);
+
+    RCLCPP_INFO(LOGGER, "Real robot starting position: [%.3f, %.3f, %.3f, %.3f, %.3f, %.3f]",
+                starting_joint_positions_[0], starting_joint_positions_[1], starting_joint_positions_[2],
+                starting_joint_positions_[3], starting_joint_positions_[4], starting_joint_positions_[5]);
   }
   
   void return_to_starting_position() {
