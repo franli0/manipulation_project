@@ -13,7 +13,7 @@ class StaticTransformPublisher(Node):
         
         self.tf_static_broadcaster = StaticTransformBroadcaster(self)
         self.publish_static_transform()
-        self.get_logger().info('Static transform publisher initialized (Python)')
+        self.get_logger().info('Static transform publisher initialized')
 
     def publish_static_transform(self):
         static_transform = TransformStamped()
