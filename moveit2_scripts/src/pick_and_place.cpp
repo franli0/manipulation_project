@@ -79,6 +79,7 @@ public:
   void execute_pick_and_place() {
     RCLCPP_INFO(LOGGER, "Starting Pick and Place Sequence...");
 
+    // Step 1: Starting position 
     RCLCPP_INFO(LOGGER, "Storing starting position...");
     store_starting_position();
 
@@ -255,16 +256,6 @@ private:
     }
 
     RCLCPP_INFO(LOGGER, "Planning Gripper Close...");
-    
-    // Try named target first
-    // try {
-    //   setup_named_pose_gripper("gripper_pickup");
-    //   plan_trajectory_gripper();
-    //   execute_trajectory_gripper();
-    //   return;
-    // } catch (const std::exception& ex) {
-    //   RCLCPP_WARN(LOGGER, "Named target 'close' failed: %s", ex.what());
-    // }
 
     // Gradual closing (more gentle)
     try {
