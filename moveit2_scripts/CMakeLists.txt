@@ -18,6 +18,7 @@ find_package(custom_msgs REQUIRED)
 add_executable(pick_and_place src/pick_and_place.cpp)
 add_executable(pick_and_place_real src/pick_and_place_real.cpp)
 add_executable(pick_and_place_perception src/pick_and_place_perception.cpp)
+add_executable(pick_and_place_perception_real src/pick_and_place_perception_real.cpp)
 
 # Add dependencies
 ament_target_dependencies(pick_and_place
@@ -47,11 +48,22 @@ ament_target_dependencies(pick_and_place_perception
   custom_msgs
 )
 
+ament_target_dependencies(pick_and_place_perception_real
+  rclcpp
+  moveit_ros_planning_interface
+  moveit_ros_move_group
+  geometry_msgs
+  tf2_geometry_msgs
+  moveit_msgs
+  custom_msgs
+)
+
 # Install targets
 install(TARGETS
   pick_and_place
   pick_and_place_real
   pick_and_place_perception
+  pick_and_place_perception_real
   DESTINATION lib/${PROJECT_NAME}
 )
 
