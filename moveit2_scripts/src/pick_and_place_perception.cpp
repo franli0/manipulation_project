@@ -10,7 +10,6 @@
 #include <thread>
 #include <vector>
 
-// Include custom perception messages
 #include "custom_msgs/msg/detected_objects.hpp"
 
 // program variables
@@ -475,7 +474,7 @@ private:
     }
   }
 
-}; // class PickAndPlacePerceptionController
+};
 
 int main(int argc, char **argv) {
   // initialize program node
@@ -485,10 +484,10 @@ int main(int argc, char **argv) {
   std::shared_ptr<rclcpp::Node> base_node = std::make_shared<rclcpp::Node>("pick_and_place_perception_controller");
 
   // instantiate class
-  PickAndPlacePerceptionController pick_and_place_node(base_node);
+  PickAndPlacePerceptionController pick_and_place_perception_node(base_node);
 
   // keep spinning until execution is complete
-  pick_and_place_node.spin();
+  pick_and_place_perception_node.spin();
 
   // shutdown ros2 node
   rclcpp::shutdown();

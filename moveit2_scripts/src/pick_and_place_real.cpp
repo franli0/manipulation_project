@@ -446,7 +446,7 @@ private:
     }
   }
 
-}; // class PickAndPlaceRealController
+};
 
 int main(int argc, char **argv) {
   // initialize program node
@@ -456,10 +456,10 @@ int main(int argc, char **argv) {
   std::shared_ptr<rclcpp::Node> base_node = std::make_shared<rclcpp::Node>("pick_and_place_real_controller");
 
   // instantiate class
-  PickAndPlaceRealController pick_and_place_node(base_node);
+  PickAndPlaceRealController pick_and_place_real_node(base_node);
 
   // execute pick and place sequence
-  pick_and_place_node.execute_pick_and_place();
+  pick_and_place_real_node.execute_pick_and_place();
 
   // shutdown ros2 node
   rclcpp::shutdown();

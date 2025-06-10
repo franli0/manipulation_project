@@ -429,7 +429,7 @@ private:
     }
   }
 
-}; // class PickAndPlaceController
+};
 
 int main(int argc, char **argv) {
   // initialize program node
